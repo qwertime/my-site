@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вход</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="padding:100px 0; text-align:center;">
+  <h2>🔐 Вход в личный кабинет</h2>
+  {% with msgs = get_flashed_messages() %}
+    {% if msgs %}
+      <ul style="color:red; list-style:none;">
+        {% for m in msgs %}<li>{{ m }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="post" style="display:inline-block; text-align:left;">
+    <input name="username" placeholder="Логин" required><br><br>
+    <input name="password" type="password" placeholder="Пароль" required><br><br>
+    <button type="submit">Войти</button>
+  </form>
+</body>
+</html>

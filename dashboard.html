@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Личный кабинет</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="page">
+  <div class="container form-card">
+
+    <a href="{{ url_for('logout') }}" style="float:right; color:#214d78;">Выйти</a>
+    <h2>👤 Личный кабинет</h2>
+
+    <div class="dashboard-section">
+      <h3>1. Заказать пропуск</h3>
+      <form action="{{ url_for('order_pass') }}" method="post">
+        <input name="full_name" placeholder="ФИО" required>
+        <button type="submit">Заказать</button>
+      </form>
+    </div>
+
+    <div class="dashboard-section">
+      <h3>2. Написать админу</h3>
+      <a href="https://t.me/rodichev_a" target="_blank" class="btn-talk">Написать в Telegram</a>
+    </div>
+
+    <div class="dashboard-section">
+      <h3>3. Оценить сайт</h3>
+      <form action="{{ url_for('submit_rating') }}" method="post">
+        <select name="rating" required>
+          {% for i in range(1,6) %}
+            <option value="{{ i }}">{{ i }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+
+    {% with msgs = get_flashed_messages() %}
+      {% if msgs %}
+        <ul class="messages">
+          {% for m in msgs %}<li style="color:green">{{ m }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* ========== БАЗОВАЯ СТИЛИСТИКА ========== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+  color: #214d78;
+}
+
+/* ========== ОБЩИЙ КОНТЕЙНЕР ========== */
+.container {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========== ВЫРАВНИВАНИЕ ПО ЦЕНТРУ ЭКРАНА ========== */
+body.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== КАРТОЧКА ФОРМЫ ========== */
+.form-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+/* ========== ЗАГОЛОВКИ ========== */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* ========== ФОРМЫ, ИНПУТЫ, КНОПКИ ========== */
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #90caf9;
+  border-radius: 4px;
+  font-size: 16px;
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #42a5f5;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #42a5f5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background .3s;
+}
+button:hover {
+  background: #1e88e5;
+}
+
+/* ========== СООБЩЕНИЯ (FLASH) ========== */
+ul.messages {
+  list-style: none;
+  margin-bottom: 20px;
+}
+ul.messages li {
+  text-align: center;
+  color: #d32f2f; /* ошибки */
+}
+
+/* ========== ССЫЛКА- КНОПКА «НАПИСАТЬ В TГ» ========== */
+.btn-talk {
+  display: block;
+  text-align: center;
+  margin: 0 auto 20px;
+  padding: 12px 0;
+  width: 100%;
+  background: #90caf9;
+  color: #214d78;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background .3s;
+}
+.btn-talk:hover {
+  background: #64b5f6;
+}
+
+/* ========== ДОПОЛНИТЕЛЬНЫЙ ОТСТУП МЕЖДУ БЛОКАМИ ========== */
+.dashboard-section {
+  margin-bottom: 30px;
+}
